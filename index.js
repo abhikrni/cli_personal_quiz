@@ -4,20 +4,20 @@ const readlineSync = require("readline-sync")
 
 let questionBank = [
   {
-    question: 'What is my last name?',
-    answer: 'Kulkarni'
+    question: 'What is my name?',
+    answer: 'Abhishek'
   },
   {
     question: 'How old am I?',
-    answer: '21'
+    answer: '22'
   },
   {
-    question: 'Where do I live?',
-    answer: 'Texas'
+    question: 'My favorite IPL team?',
+    answer: 'Mumbai Indians'
   },
   {
-    question: 'Which city was my college in?',
-    answer: 'San Francisco'
+    question: 'My favorite color?',
+    answer: 'White'
   },
   {
     question: 'What is my favorite TV series',
@@ -25,16 +25,9 @@ let questionBank = [
   }
 ]
 
-highScorers = [
-  {
-  name: "Abhishek",
-  score: '4'
-  }
-]
-
-correctCount = 0
 
 function play_game(){
+  let correctCount = 0
 
   for (i=0; i<questionBank.length; i++){
   let userAnswer = readlineSync.question(questionBank[i].question +  " \n")
@@ -46,9 +39,7 @@ function play_game(){
       console.log(chalk.red("wrong"))
   }
   }
-
+  console.log(chalk.cyan("You got", correctCount, "/5 correct"))
 }
 
 play_game()
-
-console.log(chalk.cyan("You got", correctCount, "/5 correct"))
